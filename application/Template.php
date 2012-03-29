@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template are basically HTML files with a little PHP embedded.
+ * Templates are basically HTML files with a little PHP in them.
  * 
  * @author K.Kolarov  
  */
@@ -19,22 +19,22 @@ Class Template {
     }
     
     /**
-     * The only thing, that it make is visualize the HTML about a respective file $name.
+     * Visualizes the HTML in the file $file_name.
      * 
-     * @param string $name
+     * @param string $file_name This is the path to the file which will be visialized. The file must be .php but must have HTML in it.
      * @return void
      */
-    public function show($name) {
-        $path = __SITE_PATH . '/view' . '/' . $name . '.php';
+    public function show($file_name) {
+        $path = __SITE_PATH . '/view' . '/' . $file_name . '.php';
         if (file_exists($path) == false) {
             throw new Exception('Template not found in ' . $path);
             return false;
         }
 
         foreach ($this->vars as $key => $value) {
-            $$key = $value;
+            $key = $value;
         }
-
+        
         include ($path);
     }
 

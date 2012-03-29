@@ -18,7 +18,7 @@ class Router {
     }
 
     /**
-     * Set the controller directory path.
+     * Sets the controller directory path.
      * 
      * @param string $path
      * @return void 
@@ -28,7 +28,7 @@ class Router {
     }
 
     /**
-     * Get the controller and load it.
+     * Gets the controller and loads it.
      * 
      * @return void
      */
@@ -50,7 +50,7 @@ class Router {
     }
 
     /**
-     * Decide which controller to load it.
+     * Decides which controller to be loaded.
      * 
      * @return void
      */

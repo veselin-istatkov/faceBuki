@@ -34,7 +34,7 @@ class Bootstrap {
      * If a connection with the db is already constructed, returns this connection.
      * If not, constructs it and returns it.
      * 
-     * @return entityManager_object Returns a connection with the db.
+     * @return object entityManager Returns a connection with the db.
      */
     public static function getInstance() {
         if (self::$entityManager == null) {
@@ -59,7 +59,7 @@ class Bootstrap {
      * The object from DriverManger class is primary access point to DBAL
      * functionality.
      * 
-     * @return object  DriverManager
+     * @return object DriverManager
      */
     public function getConnection() {
         return $this->connection;

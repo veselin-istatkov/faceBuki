@@ -1,7 +1,7 @@
 <?php
 
 /** 
- * The registry is place, where site wide variable, can be stored without to use
+ * Registry is the place, where site wide variable, can be stored without usage
  * of globals. 
  * 
  * @author K.Kolarov

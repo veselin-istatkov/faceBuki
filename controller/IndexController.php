@@ -1,13 +1,13 @@
 <?php
 
 /**
- * It is design to control for login and index page.
+ * IndexController decides which model to choose and to which view to send it. It only works with login and index page.
  * 
  * @author Kamen Kolarov 
  */
 class IndexController {
 
-    protected $registry;
+    private $registry;
 
     function __construct($registry) {
         $this->registry = $registry;
@@ -22,44 +22,11 @@ class IndexController {
     }
 
     /**
-     * If successful new user is created, visuallize the index page.
-     * 
-     * @return void 
-     */
-    public function registration() {
-
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
-        $username = $_POST['email'];
-        $password = $_POST['password'];
-
-        $user = new User($this->registry);
-        $user->signUp($firstname, $lastname, $username, $password);
-
-        $this->registry->template->show('index');
-    }
-
-    /**
-     * if the user is fill correct information, visuallize the index page.
+     * If the user has filled correct information, visuallizes the index page.
+     * If not, visualizes the login page.
      * 
      * @return void  
      */
-    public function signIn() {
-
-        //JAVASCRIPT !
-
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $user = new User($this->registry);
-
-        if ($user->checkUser($email, $password)) {
-            $this->registry->template->show('index');
-        } else {
-            $this->registry->template->show('login_page/index');
-        }
-    }
-
     public function checkUserAjax() {
         $username = $_POST['email'];
         $password = $_POST['password'];
@@ -74,7 +41,12 @@ class IndexController {
             echo json_encode($status);
         }
     }
-
+    
+    /**
+     * Creates a new record for a new user in db. After that visuallizes the index page.
+     * 
+     * @return void 
+     */
     public function SignUpAjax() {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * It is designed to control for forgotten password.
+ * RecoveryController decides decides which model to choose and to which view to send it. It only works with 'forgotten password' funtionality.
  * 
  * @author K.Kolarov 
  */

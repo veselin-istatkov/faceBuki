@@ -4,7 +4,7 @@
  * The idea of this file is to:
  *  1)include the basic files,
  *  2)autoload a file if not manually included
- * here and include this file every time when you need something to include.
+ * here and include this file(init.php) every time when you need something to include.
  */
 
 include_once __SITE_PATH . '/application/' . 'Registry.php';
@@ -19,7 +19,6 @@ include_once __SITE_PATH . '/application/' . 'encryption_password.php';
 
 /**
  * This function autoincludes a file when you need it. Searches in 'model/Entities'.
- * 
  * 
  * @param 
  *  $class The class that you need to include.
