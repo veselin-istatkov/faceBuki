@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link href="public/css/global/header.css" rel="stylesheet" type="text/css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="public/js/login_page/form_validation.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="head">
+                <div class="logo"><a href="index.php"></a></div>
+                <div class="clear"></div>
+                <form method="POST" class = "signin_form" action="">
+                    <input class="signin_email" name = "email" type="text" value=""/>
+                    <div class="clear"></div>
+                    <input class="signin_password" name = "password" type="password" value=""/>
+                    <div class="clear"></div>
+                    <input class="signin" type="submit" value="Sign in"/>
+                    <div class="clear"></div>
+                    <label class="remember">
+                        <input type="checkbox" class="check"/>
+                        <span>Remember</span> </label>
+                    <div class="clear"></div>
+                </form>
+                <label class="forgot">
+                    <a href="index.php?rt=Recovery" style="text-decoration:none;">
+                        <div id="no_style"><span>Forgot It?</span></div>
+                    </a>
+                </label>
+            </div>
+        </div>
+    </body>
+</html>
