@@ -1,5 +1,4 @@
 <?php
-//op op
 $site_path = dirname(__FILE__);
 
 define('__SITE_PATH', $site_path);

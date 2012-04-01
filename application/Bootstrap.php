@@ -25,7 +25,7 @@ class Bootstrap {
             'dbname' => 'bubbl',
             'driver' => 'pdo_mysql'
         );
-        $this->config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . '\Entities'), $this->isDevMode);
+        $this->config = Setup::createAnnotationMetadataConfiguration(array('..\model\Entities'), $this->isDevMode);
         self::$entityManager = \Doctrine\ORM\EntityManager::create($this->connection, $this->config);
     }
 
