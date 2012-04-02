@@ -9,7 +9,7 @@ class User {
      * @Id
      * @Column(name="id",type="integer")
      * @GeneratedValue  
-     */
+     **/
     private $uId;
 
     /**
@@ -44,7 +44,7 @@ class User {
 
     /**
      * @Column(type="string",length=50,nullable=true) 
-     */
+     **/
     private $city;
 
     /**
@@ -106,13 +106,13 @@ class User {
         }
     }
     /**
-     * Update the password in the database.
+     * Changes the existing password in db associated with $email to $password.
      * 
      * @param string $email
      * @param string $password
      * @return void 
      */
-    public function updatePassword($email, $password) {
+    public function changePassword($email, $password) {
         $salt = getRandomSalt();
         $hash = getPasswordHash($salt, $password);
         $this->registry->database->getConnection()->update("users", array("password" => $hash), array("username" => $email));

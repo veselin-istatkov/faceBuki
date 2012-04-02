@@ -7,7 +7,7 @@
  */
 class RecoveryController {
 
-    protected $registry;
+    private $registry;
 
     function __construct($registry) {
         $this->registry = $registry;
