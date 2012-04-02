@@ -1,23 +1,8 @@
 <?php
-use Doctrine\ORM\Tools\Setup;
 
-require_once 'Doctrine\ORM\Tools\Setup.php';
-Setup::registerAutoloadPEAR();
+require_once '..\application\Bootstrap.php';
 
-$isDevMode = true;
-
-$config = Setup::createAnnotationMetadataConfiguration(array('..\model'), $isDevMode);
-
-$conn = array(
-	'user' => 'root',
-	'password' => '',
-	'host' => 'localhost',
-	'dbname' => 'bubbl',
-    'driver' => 'pdo_mysql'
-);
-
-// obtaining the entity manager
-$entityManager = \Doctrine\ORM\EntityManager::create($conn, $config);
+$entityManager = Bootstrap::getInstance();
 
 $helperSet = new \Symfony\Component\Console\Helper\HelperSet(array(
     'em' => new \Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper($entityManager)

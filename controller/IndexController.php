@@ -3,7 +3,7 @@
 /**
  * IndexController decides which model to choose and to which view to send it. It only works with login and index page.
  * 
- * @author Kamen Kolarov 
+ * @author K.Kolarov 
  */
 class IndexController {
 
@@ -27,10 +27,10 @@ class IndexController {
      * 
      * @return void  
      */
-    public function checkUserAjax() {
+    public function signInAjax() {
         $username = $_POST['email'];
         $password = $_POST['password'];
-
+        
         $user = new User($this->registry);
 
         if ($user->checkUser($username, $password)) {
@@ -47,7 +47,7 @@ class IndexController {
      * 
      * @return void 
      */
-    public function SignUpAjax() {
+    public function signUpAjax() {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
         $username = $_POST['email'];

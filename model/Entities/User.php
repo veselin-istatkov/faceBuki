@@ -2,7 +2,7 @@
 
 /**
  * @author K.Kolarov
- */
+ **/
 class User {
 
     /**
@@ -35,7 +35,7 @@ class User {
     /**
      * @Column(type="string",length=50,unique=true) 
      * */
-    private $username;
+    private $email;
 
     /**
      * @Column(type="datetime",nullable=true) 
@@ -56,6 +56,7 @@ class User {
      * @Column(type="string",length=80) 
      * */
     private $password;
+    
     private $registry;
 
     public function __construct($registry = null) {

@@ -1,165 +1,208 @@
-body, html{
-	margin:0;
-	padding:0;
-	height:99%;
+body, html {
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow:hidden;
 }
 /*MAIN CONTAINER*/
-.main_container{
-	width:900px;
-	height:100%;
-	margin-left:auto;
-	margin-right:auto;
+.main_container {
+    width:900px;
+    height:95%;
+    margin-left:auto;
+    margin-right:auto;
 }
 /*FOOTER PROPERTIES*/
-.footer{
-	width:900px;
-	text-align:center;
-	font:12px Arial;
-	color:#737373;
-	height:55px;
-	position:absolute;
-	bottom:-5px;
-	margin-left:auto;
-	margin-right:auto;
+.footer, span {
+    width:250px;
+    height:30px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color:#737373;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
 }
-/* FORM */
-#form {
-	width: 400px!important;
-	height: 290px!important;
-	float: right;
-	margin-top:90px;
-	margin-right:30px;
+/*Sign in form container*/
+.form_container {
+    height:400px;
+    width:300px;
+    margin-right:0px;
+    margin-top:80px;
+    float:right;
 }
-/*FORM TABS*/
-#formNav {
-	height: 35px;
-	width: 390px;
-	float: right;
-	margin-right: 10px;
+/*FORM WRAP*/
+.form_wrapper {
+    background:#FFFFFF;
+    height: 260px;
+    width:260px;
+    border: 1px solid;
+    border-left:none;
+    border-right:none;
+    margin-top:-13px;
 }
-/*FORM ANCHOR*/
-#formNav a {
-	text-decoration: none;
-	font: 12px Arial;
-	color: #FFF;
-	font-weight: bold;
+/*Sign up form text fields*/
+.txt_look{
+    border: 1px solid #c2c2d8;
+    border-radius: 5px 5px 5px 5px;
+    height: 22px;
+    width: 170px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color: #333;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: center;
 }
-/*FORM LIST*/
-#formNav ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	display: inline-block;
-	float: right;
+/*Sign up form text fields hover*/
+.txt_look:hover{
+    border: 1px solid #c2c2d8;
+    border-radius: 5px 5px 5px 5px;
+    height: 22px;
+    width: 170px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color: #333;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: center;
+    box-shadow:0 0 3px #F30;
 }
-/*FORM LIST ITEM*/
-#formNav li {
-	margin-top: 100px;
-	padding: 0;
-	list-style-type: none;
-	display: inline-block;
-	height: 25px;
-	width: 75px;
-	background:#A9A9A9!important;
-	color: #FFF;
-	text-align: center;
-	padding-top: 10px;
-	border-radius: 5px 5px 0px 0px
+/*Sign up form text fields - on focus*/
+.txt_look:focus{
+    border: 1px solid #c2c2d8;
+    border-radius: 5px 5px 5px 5px;
+    height: 22px;
+    width: 170px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color: #333;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: center;
+    box-shadow:0 0 3px #F30;
 }
-/*LIST ITEM HOVER*/
-#formNav li:hover {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	display: inline-block;
-	height: 25px;
-	width: 75px;
-	background:#A9A9A9!important;
-	color: #FFF;
-	text-align: center;
-	padding-top: 10px;
-	border-radius: 5px 5px 0px 0px
+/*Text field for first name*/
+#txt_firstname {	
+    margin-top:30px;
+    position:absolute;
 }
-/*FORM INNER CONTAINER*/
-#formWrp {
-	height: 173px;
-	width: 290px;
-	margin: 25px auto;
+/*Text field for last name */
+#txt_lastname {
+    margin-top: 70px;
+    position:absolute;
 }
-/*FORM CONTAINER*/
-#formWrapper {
-	background:#F2F2F2;
-	border-radius:10px 10px 10px 10px;
-	height: 250px;
-	width: 410px;
-	margin-top: 100px;
-	padding: 0;
-	float:right;
-	padding: 15px;
+/*Text field for email*/
+#txt_email {
+    margin-top: 110px;
+    position:absolute;
 }
-/*FORM CONTAINER INPUT ELEMENTS STYLE*/
-#formWrapper input{
-	border: 1px solid #c2c2d8;
-	border-radius: 5px 5px 5px 5px;
-	border-style:none;
-	height: 22px;
-	width: 125px;
-	font: 12px Arial;
-	font-weight: bold;
-	color: #333;
-	padding-left: 5px;
-	padding-right: 5px;
-	padding-bottom: 3px;
-	text-align: center;
+/*Text field for password*/
+#txt_password {
+    margin-top: 150px;
+    position:absolute;
 }
 /*FORM TEXT STYLE*/
-.formText{
-	font: 12px Arial;
-	color: #b3b3b3;
-	text-decoration: none;
-	float: left;
-	margin-top: 7px;
+.formText {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color: #b3b3b3;
+    text-decoration: none;
+    margin-top:-20px;
+    margin-left:30px;
+    position:absolute;
 }
 /*FORM CONTAINER ANCHOR DESIGN*/
-#formWrapper a {
-	font: 12px Arial;
-	color: #716e99;
-	text-decoration: underline;
-}
-/*FORM TITLE DESIGN*/
-.formTitle {
-	font: 12px Arial;
-	color: #b3b3b3;
-	text-decoration: none;
-	font-style: italic;
-	width: 135px;
-	height: 15px;
-	text-align: center;
+#form_wrapper a {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color: #716e99;
+    text-decoration: underline;
 }
 /*FORM SIGN UP BUTTON DESIGN*/
-.form_signUP {
-	border-radius: 5px 5px 5px 5px!important;
-	background: -moz-linear-gradient(bottom, rgb(246,96,1) 5%, rgb(255,193,64) 95%);
-	font: 12px Arial!important;
-	font-weight: bold!important;
-	text-align: center!important;
-	width: 100px!important;
-	height: 30px!important;
-	float: right!important;
-	cursor: pointer!important;
+.btn_sign_up {
+    border-radius: 5px 5px 5px 5px!important;
+    background: -moz-linear-gradient(bottom, rgb(246,96,1) 5%, rgb(255,193,64) 95%);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-align: center!important;
+    border-style:none;
+    width: 80px!important;
+    height: 30px!important;
+    cursor: pointer!important;
+    margin-left: 100px;
+    margin-top:190px;
 }
-/*FORM POSSITIONING AND SIZE*/
-.form {
-	margin-left: auto;
-	margin-right: auto;
-	width: 290px!important;
-	height: 122px!important;
-	margin-top: 10px;
+/*FORM SIGN UP BUTTON DESIGN - hover*/
+.btn_sign_up:hover {
+    border-radius: 5px 5px 5px 5px!important;
+    background: -moz-linear-gradient(bottom, rgb(246,96,1) 5%, rgb(255,193,64) 95%);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-align: center!important;
+    border-style:none;
+    width: 80px!important;
+    height: 30px!important;
+    cursor: pointer!important;
+    margin-left: 105px;
+    margin-top:190px;
 }
-/*TERMS OF USE POSITIONING*/
-.insurance {
-	font: 10px Arial;
-	color: #cecece;
-	float: left;
-	margin:-10px 0 0 39px;
+/*H3 text format*/
+h3 {
+    font-family:Arial, Helvetica, sans-serif;
+}
+/*Ordered list style*/
+ol {
+    list-style:none;
+}
+/*Second sign in form container (if first fails)*/
+.try_signin_container{
+    width: 900px;
+    height: 300px;
+    margin-top: 15px;
+    border: 1px solid;
+    border-radius:7px 7px 7px 7px;
+
+}
+/*Second sign in text boxes design*/
+.try_signin_box_design{
+    width: 250px;
+    height: 25px;
+    border-radius:5px 5px 5px 5px;
+    border:1px solid;
+    margin-bottom: 6px;
+}
+/*H2 text position*/
+.try_signin_text_position{
+    margin-left: 70px;
+}
+/*Second sign in fieldset design and position*/
+.try_signin_fieldset{
+    margin-left: 60px;
+    width: 500px;
+    border-style: none;
+}
+/*Second sign in button design*/
+.try_signin_btn{
+    width: 140px;
+    height: 25px;
+    border-radius:5px 5px 5px 5px;
+    border-style: none;
+    background: -moz-linear-gradient(bottom, rgb(38,58,100) 10%, rgb(152,172,215) 90%);
+}
+/*Second sign in hyper link format*/
+.try_signin_hyper_format{
+    color: #9933ff!important;
+    text-decoration:underline!important;
+}
+/*Second sign in hyper link format - hover*/
+.try_signin_hyper_format:hover{
+    color: #9933ff!important;
+    text-decoration:underline!important;
+}
+/*Second sign in span position*/
+.try_signin_span_pos{
+    margin-left: 10px;
 }

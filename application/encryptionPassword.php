@@ -5,7 +5,6 @@
  * 
  *  @author V.Istatkov
  */
-
 define("LENGTH", 8);
 define("SALT_POS_BEFORE_HASH", 5);
 define("SALT_POS_AFTER_HASH", 37);

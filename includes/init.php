@@ -15,7 +15,7 @@ include_once __SITE_PATH . '/application/' . 'Template.php';
 
 include_once __SITE_PATH . '/application/' . 'Bootstrap.php';
 
-include_once __SITE_PATH . '/application/' . 'encryption_password.php';
+include_once __SITE_PATH . '/application/' . 'EncryptionPassword.php';
 
 /**
  * This function autoincludes a file when you need it. Searches in 'model/Entities'.

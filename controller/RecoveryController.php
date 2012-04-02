@@ -25,7 +25,7 @@ class RecoveryController {
      * @return void 
      */
     public function recoveryEmail() {
-        $email = $_POST['email'];
+        //$email = $_POST['email'];
 
         $this->registry->template->show("login_page/recovery_code");
     }
@@ -36,7 +36,7 @@ class RecoveryController {
      * @return void 
      */
     public function recoveryCode() {
-        $user = new User();
+        //$user = new User();
         $this->registry->template->show("login_page/recovery_password");
     }
 
@@ -46,7 +46,7 @@ class RecoveryController {
      * @return void
      */
     public function recoveryPassword() {
-        $user = new User();
+        //$user = new User();
         $this->registry->template->show("index");
     }
 
