@@ -92,11 +92,6 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Facebuki\\LoginPageBundle\\Controller\\LoginPageController::indexAction',  '_route' => 'login_page',);
         }
 
-        // recovery
-        if ($pathinfo === '/Recovery') {
-            return array (  '_controller' => 'Facebuki\\LoginPageBundle\\Controller\\RecoveryController::identifyYourAccountAction',  '_route' => 'recovery',);
-        }
-
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
