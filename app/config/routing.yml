@@ -1,0 +1,7 @@
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
+FacebukiLoginPageBundle:
+    resource: "@FacebukiLoginPageBundle/Resources/Config/routing.yml"
+    prefix:   /
