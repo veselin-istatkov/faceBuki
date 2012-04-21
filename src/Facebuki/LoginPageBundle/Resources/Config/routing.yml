@@ -1,7 +1,3 @@
 login_page:
     pattern:   /
     defaults:  { _controller: FacebukiLoginPageBundle:LoginPage:index }
-    
-recovery:
-    pattern:   /Recovery/{step}
-    defaults:  { _controller: FacebukiLoginPageBundle:Recovery:step }    

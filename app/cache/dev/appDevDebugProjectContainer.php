@@ -42,7 +42,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAnnotationReaderService()
     {
-        return $this->services['annotation_reader'] = new \Doctrine\Common\Annotations\FileCacheReader(new \Doctrine\Common\Annotations\AnnotationReader(), 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/annotations', true);
+        return $this->services['annotation_reader'] = new \Doctrine\Common\Annotations\FileCacheReader(new \Doctrine\Common\Annotations\AnnotationReader(), 'C:\\xampp\\htdocs\\Symfony\\app/cache/dev/annotations', true);
     }
 
     /**
@@ -58,38 +58,38 @@ class appDevDebugProjectContainer extends Container
         $a = $this->get('assetic.asset_factory');
         $b = $this->get('templating.loader');
 
-        $c = new \Assetic\Cache\ConfigCache('C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/assetic/config');
+        $c = new \Assetic\Cache\ConfigCache('C:\\xampp\\htdocs\\Symfony\\app/cache/dev/assetic/config');
 
         $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($a, array('twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig')), $c, true), 'php' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Symfony\Bundle\AsseticBundle\Factory\Loader\AsseticHelperFormulaLoader($a), $c, true)));
 
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FrameworkBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/FrameworkBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FrameworkBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FrameworkBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/FrameworkBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FrameworkBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SecurityBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/SecurityBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SecurityBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SecurityBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/SecurityBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SecurityBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'TwigBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/TwigBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'TwigBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'TwigBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/TwigBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'TwigBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'MonologBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/MonologBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'MonologBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\MonologBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'MonologBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/MonologBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'MonologBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\MonologBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SwiftmailerBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/SwiftmailerBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SwiftmailerBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SwiftmailerBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/SwiftmailerBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SwiftmailerBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'DoctrineBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/DoctrineBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'DoctrineBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\DoctrineBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'DoctrineBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/DoctrineBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'DoctrineBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\DoctrineBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'AsseticBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/AsseticBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'AsseticBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\bundles\\Symfony\\Bundle\\AsseticBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'AsseticBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/AsseticBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'AsseticBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\bundles\\Symfony\\Bundle\\AsseticBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioFrameworkExtraBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/SensioFrameworkExtraBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioFrameworkExtraBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\bundles\\Sensio\\Bundle\\FrameworkExtraBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioFrameworkExtraBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/SensioFrameworkExtraBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioFrameworkExtraBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\bundles\\Sensio\\Bundle\\FrameworkExtraBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'JMSSecurityExtraBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/JMSSecurityExtraBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'JMSSecurityExtraBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\bundles\\JMS\\SecurityExtraBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'JMSSecurityExtraBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/JMSSecurityExtraBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'JMSSecurityExtraBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\bundles\\JMS\\SecurityExtraBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FacebukiLoginPageBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/FacebukiLoginPageBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FacebukiLoginPageBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\src\\Facebuki\\LoginPageBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FacebukiLoginPageBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/FacebukiLoginPageBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FacebukiLoginPageBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\src\\Facebuki\\LoginPageBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'WebProfilerBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/WebProfilerBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'WebProfilerBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'WebProfilerBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/WebProfilerBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'WebProfilerBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioDistributionBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/SensioDistributionBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioDistributionBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\bundles\\Sensio\\Bundle\\DistributionBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioDistributionBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/SensioDistributionBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioDistributionBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\bundles\\Sensio\\Bundle\\DistributionBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioGeneratorBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/SensioGeneratorBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioGeneratorBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\bundles\\Sensio\\Bundle\\GeneratorBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioGeneratorBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/SensioGeneratorBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioGeneratorBundle', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\bundles\\Sensio\\Bundle\\GeneratorBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, '', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, '', 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FrameworkBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/FrameworkBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FrameworkBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FrameworkBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/FrameworkBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FrameworkBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SecurityBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/SecurityBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SecurityBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SecurityBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/SecurityBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SecurityBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'TwigBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/TwigBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'TwigBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'TwigBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/TwigBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'TwigBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'MonologBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/MonologBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'MonologBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\MonologBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'MonologBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/MonologBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'MonologBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\MonologBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SwiftmailerBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/SwiftmailerBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SwiftmailerBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SwiftmailerBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/SwiftmailerBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SwiftmailerBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'DoctrineBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/DoctrineBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'DoctrineBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\DoctrineBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'DoctrineBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/DoctrineBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'DoctrineBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\DoctrineBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'AsseticBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/AsseticBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'AsseticBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\bundles\\Symfony\\Bundle\\AsseticBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'AsseticBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/AsseticBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'AsseticBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\bundles\\Symfony\\Bundle\\AsseticBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioFrameworkExtraBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/SensioFrameworkExtraBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioFrameworkExtraBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\bundles\\Sensio\\Bundle\\FrameworkExtraBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioFrameworkExtraBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/SensioFrameworkExtraBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioFrameworkExtraBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\bundles\\Sensio\\Bundle\\FrameworkExtraBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'JMSSecurityExtraBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/JMSSecurityExtraBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'JMSSecurityExtraBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\bundles\\JMS\\SecurityExtraBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'JMSSecurityExtraBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/JMSSecurityExtraBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'JMSSecurityExtraBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\bundles\\JMS\\SecurityExtraBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FacebukiLoginPageBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/FacebukiLoginPageBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FacebukiLoginPageBundle', 'C:\\xampp\\htdocs\\Symfony\\src\\Facebuki\\LoginPageBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FacebukiLoginPageBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/FacebukiLoginPageBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'FacebukiLoginPageBundle', 'C:\\xampp\\htdocs\\Symfony\\src\\Facebuki\\LoginPageBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'WebProfilerBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/WebProfilerBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'WebProfilerBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'WebProfilerBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/WebProfilerBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'WebProfilerBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioDistributionBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/SensioDistributionBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioDistributionBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\bundles\\Sensio\\Bundle\\DistributionBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioDistributionBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/SensioDistributionBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioDistributionBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\bundles\\Sensio\\Bundle\\DistributionBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioGeneratorBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/SensioGeneratorBundle/views', '/^[^.]+\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioGeneratorBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\bundles\\Sensio\\Bundle\\GeneratorBundle/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioGeneratorBundle', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/SensioGeneratorBundle/views', '/^[^.]+\\.[^.]+\\.php$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, 'SensioGeneratorBundle', 'C:\\xampp\\htdocs\\Symfony\\vendor\\bundles\\Sensio\\Bundle\\GeneratorBundle/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'))), 'php');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, '', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/views', '/^[^.]+\\.[^.]+\\.twig$/'), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($b, '', 'C:\\xampp\\htdocs\\Symfony\\app/Resources/views', '/^[^.]+\\.[^.]+\\.php$/'), 'php');
 
         return $instance;
     }
@@ -169,7 +169,7 @@ class appDevDebugProjectContainer extends Container
         $a = $this->get('kernel');
         $b = $this->get('templating.name_parser');
 
-        $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources');
+        $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, 'C:\\xampp\\htdocs\\Symfony\\app/Resources');
 
         return $this->services['cache_warmer'] = new \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate(array(0 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer($c, $this->get('templating.locator')), 1 => new \Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer($this), 2 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer($this->get('router')), 3 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheCacheWarmer($this, $c), 4 => new \Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer($this->get('doctrine'))));
     }
@@ -243,13 +243,13 @@ class appDevDebugProjectContainer extends Container
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
         $a = new \Doctrine\Common\Cache\ArrayCache();
-        $a->setNamespace('sf2orm_default_33d776556cdb1783f0942848dc9877d5');
+        $a->setNamespace('sf2orm_default_26af5d19ab4afae7f27f921a4fffe864');
 
         $b = new \Doctrine\Common\Cache\ArrayCache();
-        $b->setNamespace('sf2orm_default_33d776556cdb1783f0942848dc9877d5');
+        $b->setNamespace('sf2orm_default_26af5d19ab4afae7f27f921a4fffe864');
 
         $c = new \Doctrine\Common\Cache\ArrayCache();
-        $c->setNamespace('sf2orm_default_33d776556cdb1783f0942848dc9877d5');
+        $c->setNamespace('sf2orm_default_26af5d19ab4afae7f27f921a4fffe864');
 
         $d = new \Doctrine\ORM\Configuration();
         $d->setEntityNamespaces(array());
@@ -257,7 +257,7 @@ class appDevDebugProjectContainer extends Container
         $d->setQueryCacheImpl($b);
         $d->setResultCacheImpl($c);
         $d->setMetadataDriverImpl(new \Doctrine\ORM\Mapping\Driver\DriverChain());
-        $d->setProxyDir('C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/doctrine/orm/Proxies');
+        $d->setProxyDir('C:\\xampp\\htdocs\\Symfony\\app/cache/dev/doctrine/orm/Proxies');
         $d->setProxyNamespace('Proxies');
         $d->setAutoGenerateProxyClasses(true);
         $d->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
@@ -337,7 +337,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getFileLocatorService()
     {
-        return $this->services['file_locator'] = new \Symfony\Component\HttpKernel\Config\FileLocator($this->get('kernel'), 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/Resources');
+        return $this->services['file_locator'] = new \Symfony\Component\HttpKernel\Config\FileLocator($this->get('kernel'), 'C:\\xampp\\htdocs\\Symfony\\app/Resources');
     }
 
     /**
@@ -902,7 +902,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getMonolog_Handler_MainService()
     {
-        return $this->services['monolog.handler.main'] = new \Monolog\Handler\StreamHandler('C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/logs/dev.log', 100, true);
+        return $this->services['monolog.handler.main'] = new \Monolog\Handler\StreamHandler('C:\\xampp\\htdocs\\Symfony\\app/logs/dev.log', 100, true);
     }
 
     /**
@@ -1054,7 +1054,7 @@ class appDevDebugProjectContainer extends Container
         $c = new \Symfony\Component\HttpKernel\DataCollector\EventDataCollector();
         $c->setEventDispatcher($this->get('event_dispatcher'));
 
-        $this->services['profiler'] = $instance = new \Symfony\Component\HttpKernel\Profiler\Profiler(new \Symfony\Component\HttpKernel\Profiler\SqliteProfilerStorage('sqlite:C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/profiler.db', '', '', 86400), $a);
+        $this->services['profiler'] = $instance = new \Symfony\Component\HttpKernel\Profiler\Profiler(new \Symfony\Component\HttpKernel\Profiler\SqliteProfilerStorage('sqlite:C:\\xampp\\htdocs\\Symfony\\app/cache/dev/profiler.db', '', '', 86400), $a);
 
         $instance->add(new \Symfony\Component\HttpKernel\DataCollector\ConfigDataCollector($b));
         $instance->add($this->get('data_collector.request'));
@@ -1123,7 +1123,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getRouterService()
     {
-        return $this->services['router'] = new \Symfony\Bundle\FrameworkBundle\Routing\Router($this, 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/config/routing_dev.yml', array('cache_dir' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev', 'debug' => true, 'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper', 'generator_cache_class' => 'appdevUrlGenerator', 'matcher_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_base_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper', 'matcher_cache_class' => 'appdevUrlMatcher'));
+        return $this->services['router'] = new \Symfony\Bundle\FrameworkBundle\Routing\Router($this, 'C:\\xampp\\htdocs\\Symfony\\app/config/routing_dev.yml', array('cache_dir' => 'C:\\xampp\\htdocs\\Symfony\\app/cache/dev', 'debug' => true, 'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper', 'generator_cache_class' => 'appdevUrlGenerator', 'matcher_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_base_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper', 'matcher_cache_class' => 'appdevUrlMatcher'));
     }
 
     /**
@@ -1306,7 +1306,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSensio_Distribution_WebconfiguratorService()
     {
-        return $this->services['sensio.distribution.webconfigurator'] = new \Sensio\Bundle\DistributionBundle\Configurator\Configurator('C:\\xampp\\htdocs\\kkolarov\\facebuki\\app');
+        return $this->services['sensio.distribution.webconfigurator'] = new \Sensio\Bundle\DistributionBundle\Configurator\Configurator('C:\\xampp\\htdocs\\Symfony\\app');
     }
 
     /**
@@ -1558,7 +1558,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTemplating_Helper_CodeService()
     {
-        return $this->services['templating.helper.code'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper(NULL, 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app', 'UTF-8');
+        return $this->services['templating.helper.code'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper(NULL, 'C:\\xampp\\htdocs\\Symfony\\app', 'UTF-8');
     }
 
     /**
@@ -1740,7 +1740,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTranslator_DefaultService()
     {
-        return $this->services['translator.default'] = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, $this->get('translator.selector'), array('translation.loader.php' => 'php', 'translation.loader.yml' => 'yml', 'translation.loader.xliff' => 'xliff'), array('cache_dir' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/translations', 'debug' => true), $this->get('session'));
+        return $this->services['translator.default'] = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, $this->get('translator.selector'), array('translation.loader.php' => 'php', 'translation.loader.yml' => 'yml', 'translation.loader.xliff' => 'xliff'), array('cache_dir' => 'C:\\xampp\\htdocs\\Symfony\\app/cache/dev/translations', 'debug' => true), $this->get('session'));
     }
 
     /**
@@ -1753,7 +1753,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTwigService()
     {
-        $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'Symfony\\Bundle\\TwigBundle\\Controller\\ExceptionController::showAction', 'cache' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/twig', 'charset' => 'UTF-8'));
+        $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'Symfony\\Bundle\\TwigBundle\\Controller\\ExceptionController::showAction', 'cache' => 'C:\\xampp\\htdocs\\Symfony\\app/cache/dev/twig', 'charset' => 'UTF-8'));
 
         $instance->addExtension(new \Symfony\Bundle\SecurityBundle\Twig\Extension\SecurityExtension($this->get('security.context')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($this->get('translator')));
@@ -1793,7 +1793,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['twig.loader'] = $instance = new \Symfony\Bundle\TwigBundle\Loader\FilesystemLoader($this->get('templating.locator'), $this->get('templating.name_parser'));
 
-        $instance->addPath('C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Bundle\\TwigBundle\\DependencyInjection/../../../Bridge/Twig/Resources/views/Form');
+        $instance->addPath('C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Bundle\\TwigBundle\\DependencyInjection/../../../Bridge/Twig/Resources/views/Form');
 
         return $instance;
     }
@@ -1868,7 +1868,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAssetic_AssetFactoryService()
     {
-        $this->services['assetic.asset_factory'] = $instance = new \Symfony\Bundle\AsseticBundle\Factory\AssetFactory($this->get('kernel'), $this, new \Symfony\Component\DependencyInjection\ParameterBag\ParameterBag($this->getDefaultParameters()), 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/../web', true);
+        $this->services['assetic.asset_factory'] = $instance = new \Symfony\Bundle\AsseticBundle\Factory\AssetFactory($this->get('kernel'), $this, new \Symfony\Component\DependencyInjection\ParameterBag\ParameterBag($this->getDefaultParameters()), 'C:\\xampp\\htdocs\\Symfony\\app/../web', true);
 
         $instance->addWorker(new \Symfony\Bundle\AsseticBundle\Factory\Worker\UseControllerWorker());
 
@@ -1889,7 +1889,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAssetic_CacheService()
     {
-        return $this->services['assetic.cache'] = new \Assetic\Cache\FilesystemCache('C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/assetic/assets');
+        return $this->services['assetic.cache'] = new \Assetic\Cache\FilesystemCache('C:\\xampp\\htdocs\\Symfony\\app/cache/dev/assetic/assets');
     }
 
     /**
@@ -2052,7 +2052,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTemplating_LocatorService()
     {
-        return $this->services['templating.locator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator($this->get('file_locator'), 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev');
+        return $this->services['templating.locator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator($this->get('file_locator'), 'C:\\xampp\\htdocs\\Symfony\\app/cache/dev');
     }
 
     /**
@@ -2086,7 +2086,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getValidator_Mapping_ClassMetadataFactoryService()
     {
-        return $this->services['validator.mapping.class_metadata_factory'] = new \Symfony\Component\Validator\Mapping\ClassMetadataFactory(new \Symfony\Component\Validator\Mapping\Loader\LoaderChain(array(0 => new \Symfony\Component\Validator\Mapping\Loader\AnnotationLoader($this->get('annotation_reader')), 1 => new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader(), 2 => new \Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader(array(0 => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml')), 3 => new \Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader(array()))), NULL);
+        return $this->services['validator.mapping.class_metadata_factory'] = new \Symfony\Component\Validator\Mapping\ClassMetadataFactory(new \Symfony\Component\Validator\Mapping\Loader\LoaderChain(array(0 => new \Symfony\Component\Validator\Mapping\Loader\AnnotationLoader($this->get('annotation_reader')), 1 => new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader(), 2 => new \Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader(array(0 => 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml')), 3 => new \Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader(array()))), NULL);
     }
 
     /**
@@ -2138,12 +2138,12 @@ class appDevDebugProjectContainer extends Container
     protected function getDefaultParameters()
     {
         return array(
-            'kernel.root_dir' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app',
+            'kernel.root_dir' => 'C:\\xampp\\htdocs\\Symfony\\app',
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
             'kernel.name' => 'app',
-            'kernel.cache_dir' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev',
-            'kernel.logs_dir' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/logs',
+            'kernel.cache_dir' => 'C:\\xampp\\htdocs\\Symfony\\app/cache/dev',
+            'kernel.logs_dir' => 'C:\\xampp\\htdocs\\Symfony\\app/logs',
             'kernel.bundles' => array(
                 'FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
                 'SecurityBundle' => 'Symfony\\Bundle\\SecurityBundle\\SecurityBundle',
@@ -2189,7 +2189,7 @@ class appDevDebugProjectContainer extends Container
             'translation.loader.yml.class' => 'Symfony\\Component\\Translation\\Loader\\YamlFileLoader',
             'translation.loader.xliff.class' => 'Symfony\\Component\\Translation\\Loader\\XliffFileLoader',
             'debug.event_dispatcher.class' => 'Symfony\\Bundle\\FrameworkBundle\\Debug\\TraceableEventDispatcher',
-            'debug.container.dump' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/appDevDebugProjectContainer.xml',
+            'debug.container.dump' => 'C:\\xampp\\htdocs\\Symfony\\app/cache/dev/appDevDebugProjectContainer.xml',
             'kernel.secret' => 'ThisTokenIsNotSoSecretChangeIt',
             'kernel.trust_proxy_headers' => false,
             'session.class' => 'Symfony\\Component\\HttpFoundation\\Session',
@@ -2217,7 +2217,7 @@ class appDevDebugProjectContainer extends Container
             'validator.mapping.loader.yaml_files_loader.class' => 'Symfony\\Component\\Validator\\Mapping\\Loader\\YamlFilesLoader',
             'validator.validator_factory.class' => 'Symfony\\Bundle\\FrameworkBundle\\Validator\\ConstraintValidatorFactory',
             'validator.mapping.loader.xml_files_loader.mapping_files' => array(
-                0 => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\vendor\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml',
+                0 => 'C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml',
             ),
             'validator.mapping.loader.yaml_files_loader.mapping_files' => array(
 
@@ -2233,7 +2233,7 @@ class appDevDebugProjectContainer extends Container
             'data_collector.memory.class' => 'Symfony\\Component\\HttpKernel\\DataCollector\\MemoryDataCollector',
             'profiler_listener.only_exceptions' => false,
             'profiler_listener.only_master_requests' => false,
-            'profiler.storage.dsn' => 'sqlite:C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/profiler.db',
+            'profiler.storage.dsn' => 'sqlite:C:\\xampp\\htdocs\\Symfony\\app/cache/dev/profiler.db',
             'profiler.storage.username' => '',
             'profiler.storage.password' => '',
             'profiler.storage.lifetime' => 86400,
@@ -2252,7 +2252,7 @@ class appDevDebugProjectContainer extends Container
             'router.cache_warmer.class' => 'Symfony\\Bundle\\FrameworkBundle\\CacheWarmer\\RouterCacheWarmer',
             'router.options.matcher.cache_class' => 'appdevUrlMatcher',
             'router.options.generator.cache_class' => 'appdevUrlGenerator',
-            'router.resource' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/config/routing_dev.yml',
+            'router.resource' => 'C:\\xampp\\htdocs\\Symfony\\app/config/routing_dev.yml',
             'request_listener.http_port' => 80,
             'request_listener.https_port' => 443,
             'templating.engine.delegating.class' => 'Symfony\\Bundle\\FrameworkBundle\\Templating\\DelegatingEngine',
@@ -2377,7 +2377,7 @@ class appDevDebugProjectContainer extends Container
                 'debug' => true,
                 'strict_variables' => true,
                 'exception_controller' => 'Symfony\\Bundle\\TwigBundle\\Controller\\ExceptionController::showAction',
-                'cache' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/twig',
+                'cache' => 'C:\\xampp\\htdocs\\Symfony\\app/cache/dev/twig',
                 'charset' => 'UTF-8',
             ),
             'monolog.logger.class' => 'Symfony\\Bridge\\Monolog\\Logger',
@@ -2455,7 +2455,7 @@ class appDevDebugProjectContainer extends Container
             'doctrine.orm.validator.unique.class' => 'Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntityValidator',
             'doctrine.orm.validator_initializer.class' => 'Symfony\\Bridge\\Doctrine\\Validator\\EntityInitializer',
             'doctrine.orm.auto_generate_proxy_classes' => true,
-            'doctrine.orm.proxy_dir' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/doctrine/orm/Proxies',
+            'doctrine.orm.proxy_dir' => 'C:\\xampp\\htdocs\\Symfony\\app/cache/dev/doctrine/orm/Proxies',
             'doctrine.orm.proxy_namespace' => 'Proxies',
             'assetic.asset_factory.class' => 'Symfony\\Bundle\\AsseticBundle\\Factory\\AssetFactory',
             'assetic.asset_manager.class' => 'Assetic\\Factory\\LazyAssetManager',
@@ -2471,7 +2471,7 @@ class appDevDebugProjectContainer extends Container
             'assetic.node.paths' => array(
 
             ),
-            'assetic.cache_dir' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/cache/dev/assetic',
+            'assetic.cache_dir' => 'C:\\xampp\\htdocs\\Symfony\\app/cache/dev/assetic',
             'assetic.twig_extension.class' => 'Symfony\\Bundle\\AsseticBundle\\Twig\\AsseticExtension',
             'assetic.twig_formula_loader.class' => 'Assetic\\Extension\\Twig\\TwigFormulaLoader',
             'assetic.helper.dynamic.class' => 'Symfony\\Bundle\\AsseticBundle\\Templating\\DynamicAsseticHelper',
@@ -2480,8 +2480,8 @@ class appDevDebugProjectContainer extends Container
             'assetic.debug' => true,
             'assetic.use_controller' => true,
             'assetic.enable_profiler' => false,
-            'assetic.read_from' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/../web',
-            'assetic.write_to' => 'C:\\xampp\\htdocs\\kkolarov\\facebuki\\app/../web',
+            'assetic.read_from' => 'C:\\xampp\\htdocs\\Symfony\\app/../web',
+            'assetic.write_to' => 'C:\\xampp\\htdocs\\Symfony\\app/../web',
             'assetic.java.bin' => 'C:\\Windows\\system32\\java.EXE',
             'assetic.node.bin' => '/usr/bin/node',
             'assetic.sass.bin' => '/usr/bin/sass',
