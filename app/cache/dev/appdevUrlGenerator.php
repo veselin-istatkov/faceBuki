@@ -24,6 +24,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_step' => true,
        '_configurator_final' => true,
        'login_page' => true,
+       'recovery' => true,
     );
 
     /**
@@ -100,5 +101,10 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getlogin_pageRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Facebuki\\LoginPageBundle\\Controller\\LoginPageController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
+    }
+
+    private function getrecoveryRouteInfo()
+    {
+        return array(array (  0 => 'step',), array (  '_controller' => 'Facebuki\\LoginPageBundle\\Controller\\RecoveryController::stepAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'step',  ),  1 =>   array (    0 => 'text',    1 => '/Recovery',  ),));
     }
 }
